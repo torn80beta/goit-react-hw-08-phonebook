@@ -8,7 +8,7 @@ import {
   StyledLabel,
 } from './AddContactForm.styled';
 import * as yup from 'yup';
-import { getIsLoading } from 'redux/selectors';
+import { getIsLoading } from 'redux/contacts/selectors';
 import { useSelector } from 'react-redux';
 
 const initialValues = {

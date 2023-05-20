@@ -6,7 +6,7 @@ import {
   StyledContactsListUL,
 } from './Contacts.styled';
 import { useSelector } from 'react-redux';
-import { getContacts, getFilter, getIsLoading } from 'redux/selectors';
+import { getContacts, getFilter, getIsLoading } from 'redux/contacts/selectors';
 
 const getFilteredContacts = (contacts, filter) => {
   return contacts.filter(({ name }) => {
