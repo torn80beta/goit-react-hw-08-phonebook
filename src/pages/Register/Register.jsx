@@ -1,12 +1,12 @@
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 import { RegistrationForm } from 'components/RegistrationForm/RegistrationForm';
 
 export default function Register() {
   return (
     <div>
-      <Helmet>
+      {/* <Helmet>
         <title>Registration</title>
-      </Helmet>
+      </Helmet> */}
       <RegistrationForm />
     </div>
   );
