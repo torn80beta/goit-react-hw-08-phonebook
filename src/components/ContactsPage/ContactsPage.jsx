@@ -33,7 +33,7 @@ export default function ContactsPage() {
       alert(`${name} is already in contacts.`);
       return;
     }
-    dispatch(addContact({ name: name, phone: number }));
+    dispatch(addContact({ name: name, number: number }));
   };
 
   const handleDeleteContact = contactId => {
