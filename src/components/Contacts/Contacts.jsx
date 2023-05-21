@@ -7,6 +7,13 @@ import {
 } from './Contacts.styled';
 import { useSelector } from 'react-redux';
 import { getContacts, getFilter, getIsLoading } from 'redux/contacts/selectors';
+/* Modal */
+import { useState } from 'react';
+import Modal from 'react-modal';
+import { useDispatch } from 'react-redux';
+import { editContact } from 'redux/contacts/operations';
+Modal.setAppElement('#modal-root');
+/*  */
 
 const getFilteredContacts = (contacts, filter) => {
   return contacts.filter(({ name }) => {
@@ -20,6 +27,39 @@ export const Contacts = ({ onDeleteContact }) => {
   const filter = useSelector(getFilter);
   const filteredContacts = getFilteredContacts(contacts, filter);
   const isFetching = useSelector(getIsLoading);
+
+  /* Modal */
+  const dispatch = useDispatch();
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [editId, setEditId] = useState(null);
+  const [editName, setEditName] = useState('');
+  const [editNumber, setEditNumber] = useState('');
+
+  function openModal(name, number, id) {
+    setIsOpen(true);
+    setEditName(name);
+    setEditNumber(number);
+    setEditId(id);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function handleNameChange(event) {
+    setEditName(event.target.value);
+  }
+
+  function handleNumberChange(event) {
+    setEditNumber(event.target.value);
+  }
+
+  function handleEditContact(e) {
+    e.preventDefault();
+    dispatch(editContact({ id: editId, name: editName, number: editNumber }));
+    closeModal();
+  }
+  /*  */
 
   return (
     // console.log(contacts),
@@ -35,6 +75,21 @@ export const Contacts = ({ onDeleteContact }) => {
           >
             Delete
           </StyledDeleteContactButton>
+          <button onClick={() => openModal(name, number, id)}>Edit</button>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Example Modal"
+          >
+            <button onClick={closeModal}>close</button>
+            <div>Edit contact</div>
+            <form onSubmit={handleEditContact}>
+              <p>Contact ID {id}</p>
+              <input value={editName} onChange={handleNameChange} />
+              <input value={editNumber} onChange={handleNumberChange} />
+              <button type="submit">Submit</button>
+            </form>
+          </Modal>
         </StyledContactListItemLi>
       ))}
     </StyledContactsListUL>
