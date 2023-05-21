@@ -13,6 +13,10 @@ const LoginPage = lazy(() => import('../pages/Login/Login'));
 const ContactsPage = lazy(() => import('./ContactsPage/ContactsPage'));
 
 const App = () => {
+  useEffect(() => {
+    document.title = 'PhoneBook';
+  }, []);
+
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
