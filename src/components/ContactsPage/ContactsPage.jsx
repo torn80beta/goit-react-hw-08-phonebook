@@ -12,7 +12,7 @@ import {
   deleteContact,
 } from 'redux/contacts/operations';
 
-export const ContactsPage = () => {
+export default function ContactsPage() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
@@ -53,4 +53,4 @@ export const ContactsPage = () => {
       <Contacts onDeleteContact={handleDeleteContact} />
     </>
   );
-};
+}

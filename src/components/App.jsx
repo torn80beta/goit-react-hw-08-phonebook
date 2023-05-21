@@ -27,9 +27,7 @@ import { PrivateRoute } from './PrivateRoute';
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../pages/Register/Register'));
 const LoginPage = lazy(() => import('../pages/Login/Login'));
-const ContactsPage = lazy(() =>
-  import('../components/ContactsPage/ContactsPage')
-);
+const ContactsPage = lazy(() => import('./ContactsPage/ContactsPage'));
 
 const App = () => {
   // const { isRefreshing } = useAuth();
@@ -44,7 +42,6 @@ const App = () => {
         <Route
           path="/register"
           element={
-            // <RegisterPage />
             <RestrictedRoute
               redirectTo="/contacts"
               component={<RegisterPage />}
@@ -54,14 +51,12 @@ const App = () => {
         <Route
           path="/login"
           element={
-            // <LoginPage />
             <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         />
         <Route
           path="/contacts"
           element={
-            // <ContactsPage />
             <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
