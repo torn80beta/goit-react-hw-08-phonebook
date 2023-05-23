@@ -5,6 +5,7 @@ import {
   StyledLabel,
   StyledInput,
   StyledH2,
+  StyledButton,
 } from './RegistrationForm.styled';
 import { StyledBackground } from 'components/Background/Background.styled';
 
@@ -21,7 +22,7 @@ export const RegistrationForm = () => {
         password: form.elements.password.value,
       })
     );
-    form.reset();
+    // form.reset();
   };
 
   return (
@@ -29,15 +30,25 @@ export const RegistrationForm = () => {
       <StyledBackground>
         <StyledH2>Registration</StyledH2>
         <StyledLabel>
-          <StyledInput type="text" name="name" placeholder="Username" />
+          <StyledInput
+            type="text"
+            name="name"
+            placeholder="Username"
+            autoComplete="on"
+          />
         </StyledLabel>
         <StyledLabel>
-          <StyledInput type="email" name="email" placeholder="Email" />
+          <StyledInput
+            type="email"
+            name="email"
+            placeholder="Email"
+            autoComplete="on"
+          />
         </StyledLabel>
         <StyledLabel>
           <StyledInput type="password" name="password" placeholder="Password" />
         </StyledLabel>
-        <button type="submit">Register</button>
+        <StyledButton type="submit">Register</StyledButton>
       </StyledBackground>
     </StyledForm>
   );
