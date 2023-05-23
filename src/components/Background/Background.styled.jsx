@@ -4,7 +4,7 @@ import photo_bg from '../../images/photo_bg.jpg';
 export const StyledBackground = styled.div`
   position: relative;
   top: -9px;
-  left: 1px;
+  left: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
