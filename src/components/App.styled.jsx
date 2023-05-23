@@ -30,15 +30,16 @@ export const StyledPhone = styled.div`
   align-items: center;
   width: 360px;
   height: 740px;
-  background: #1a1a58;
-  border-radius: 30px;
-  padding: 10px;
+  background: #232526;
+  /* background: #1a1a58; */
+  border-radius: 40px;
+  padding: 10px 15px;
 `;
 
 export const StyledPhoneMirror = styled.div`
   /* position: relative; */
   width: 356px;
-  height: 710px;
+  height: 700px;
   /* background-color: rgb(26, 25, 25); */
   background-color: white;
   border-radius: 30px;
@@ -46,20 +47,20 @@ export const StyledPhoneMirror = styled.div`
 
 export const StyledTopWrapper = styled.div`
   position: relative;
-  width: 130px;
-  height: 20px;
-  margin: 0px auto 0 auto;
+  width: 220px;
+  height: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   float: left;
-  left: 30%;
-  background-color: #232526;
-  border-radius: 0 0 45px 45px;
+  background-color: #2e2e2e;
+  border-radius: 0px 0px 45px 45px;
 `;
 
 export const StyledCamera = styled.div`
   position: relative;
   float: left;
   margin-right: 8px;
-  left: 18%;
+  left: 30%;
   width: 11px;
   height: 11px;
   top: 1px;
@@ -74,7 +75,7 @@ export const StyledLine = styled.div`
   height: 6px;
   margin: 0px auto 0 auto;
   float: left;
-  left: 20%;
+  left: 30%;
   top: 4px;
   background-color: rgb(83, 83, 82);
   border-radius: 5px;
