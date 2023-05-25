@@ -6,8 +6,8 @@ import {
   StyledInput,
   StyledH2,
   StyledButton,
-} from './RegistrationForm.styled';
-import { StyledBackground } from 'components/Background/Background.styled';
+} from '../SharedStyles/Form.styled';
+import { StyledBackground } from 'components/SharedStyles/Background.styled';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();

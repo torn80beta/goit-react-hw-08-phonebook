@@ -12,10 +12,12 @@ export const StyledBackground = styled.div`
   gap: 16px;
   background-image: url(${photo_bg});
   background-repeat: no-repeat;
-  // backgroundPosition: 'center',
+  /* background-position: center; */
   background-size: cover;
-  width: 356px;
+  /* min-width: 356px; */
+  min-width: 356px;
   height: 630px;
+  overflow: hidden;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 `;
