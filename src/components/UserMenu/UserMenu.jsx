@@ -1,8 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { userLogout } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
-import { StyledUserMenuWrapper } from './UserMenu.styled';
-// import css from './UserMenu.module.css';
+import {
+  StyledUserMenuWrapper,
+  StyledUserName,
+  StyledUserMenuButton,
+} from './UserMenu.styled';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -10,12 +13,13 @@ export const UserMenu = () => {
 
   return (
     <StyledUserMenuWrapper>
-      {/* // <div className={css.wrapper}> */}
-      {/* <p className={css.username}>{user.name}</p> */}
-      <p>{user.name}</p>
-      <button type="button" onClick={() => dispatch(userLogout())}>
+      <StyledUserName>{user.name}</StyledUserName>
+      <StyledUserMenuButton
+        type="button"
+        onClick={() => dispatch(userLogout())}
+      >
         Logout
-      </button>
+      </StyledUserMenuButton>
     </StyledUserMenuWrapper>
   );
 };
