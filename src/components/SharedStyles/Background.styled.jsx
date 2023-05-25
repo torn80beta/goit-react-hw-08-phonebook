@@ -14,9 +14,8 @@ export const StyledBackground = styled.div`
   background-repeat: no-repeat;
   /* background-position: center; */
   background-size: cover;
-  /* min-width: 356px; */
   min-width: 356px;
-  height: 630px;
+  min-height: 640px;
   overflow: hidden;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;

@@ -24,4 +24,12 @@ export const StyledUserMenuButton = styled.button`
   font-size: 15px;
   font-weight: 700;
   color: #2a363b;
+  &:hover,
+  &:focus {
+    color: #ef8e47;
+  }
+
+  &:active {
+    background-color: #ff6c00;
+  }
 `;

@@ -21,7 +21,7 @@ export const StyledDeleteContactButton = styled.button`
 `;
 
 export const StyledContactsListUL = styled.ul`
-  margin-left: 30px;
+  margin: 20px 15px;
 `;
 
 export const StyledContactListItemLi = styled.li`
@@ -30,4 +30,5 @@ export const StyledContactListItemLi = styled.li`
   align-items: baseline;
   max-width: 500px;
   height: 40px;
+  color: #f7eaea;
 `;
