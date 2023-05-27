@@ -1,18 +1,18 @@
 import styled from '@emotion/styled';
 
 export const StyledButton = styled.button`
-  /* margin: 0 30px 40px; */
-  background-color: white;
+  background-color: #cddadd;
   border: 0px;
-  border-radius: 5px;
-  padding: 5px 15px;
-  height: 25px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
   &:hover {
-    background-color: red;
+    background-color: #f1bf90;
   }
 
   &:active {
@@ -34,4 +34,9 @@ export const StyledContactListItemLi = styled.li`
   margin-bottom: 5px;
   color: #fff;
   border-bottom: 1px solid white;
+`;
+
+export const StyledButtonsWrapper = styled.div`
+  display: flex;
+  gap: 5px;
 `;

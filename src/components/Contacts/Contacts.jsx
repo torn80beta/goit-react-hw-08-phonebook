@@ -4,9 +4,12 @@ import {
   StyledButton,
   StyledContactListItemLi,
   StyledContactsListUL,
+  StyledButtonsWrapper,
 } from './Contacts.styled';
 import { useSelector } from 'react-redux';
 import { getContacts, getFilter, getIsLoading } from 'redux/contacts/selectors';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 /* Modal */
 import { useState } from 'react';
 import Modal from 'react-modal';
@@ -69,15 +72,17 @@ export const Contacts = ({ onDeleteContact }) => {
           <p>
             {name}: {number}
           </p>
-          <StyledButton
-            onClick={() => onDeleteContact(id)}
-            disabled={isFetching}
-          >
-            Delete
-          </StyledButton>
-          <StyledButton onClick={() => openModal(name, number, id)}>
-            Edit
-          </StyledButton>
+          <StyledButtonsWrapper>
+            <StyledButton onClick={() => openModal(name, number, id)}>
+              <EditNoteOutlinedIcon sx={{ fontSize: 19 }} />
+            </StyledButton>
+            <StyledButton
+              onClick={() => onDeleteContact(id)}
+              disabled={isFetching}
+            >
+              <DeleteOutlineIcon sx={{ fontSize: 16 }} />
+            </StyledButton>
+          </StyledButtonsWrapper>
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
