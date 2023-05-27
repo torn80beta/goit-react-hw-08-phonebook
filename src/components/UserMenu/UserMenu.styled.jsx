@@ -9,10 +9,17 @@ export const StyledUserMenuWrapper = styled.div`
   padding: 0 10px;
 `;
 
+export const StyledUserWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+`;
+
 export const StyledUserName = styled.p`
   display: inline-block;
   text-decoration: none;
-  padding: 12px;
+  padding: 12px 0px;
   font-weight: 700;
   color: #2a363b;
 `;
