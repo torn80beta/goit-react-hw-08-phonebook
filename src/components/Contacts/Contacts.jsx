@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  StyledDeleteContactButton,
+  StyledButton,
   StyledContactListItemLi,
   StyledContactsListUL,
 } from './Contacts.styled';
@@ -69,13 +69,15 @@ export const Contacts = ({ onDeleteContact }) => {
           <p>
             {name}: {number}
           </p>
-          <StyledDeleteContactButton
+          <StyledButton
             onClick={() => onDeleteContact(id)}
             disabled={isFetching}
           >
             Delete
-          </StyledDeleteContactButton>
-          <button onClick={() => openModal(name, number, id)}>Edit</button>
+          </StyledButton>
+          <StyledButton onClick={() => openModal(name, number, id)}>
+            Edit
+          </StyledButton>
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}

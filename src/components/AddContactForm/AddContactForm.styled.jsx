@@ -1,18 +1,24 @@
 import styled from '@emotion/styled';
 import { Field } from 'formik';
 
+export const StyledAddContactFormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;
+
 export const StyledLabel = styled.label`
-  position: relative;
-  display: block;
-  margin-left: 30px;
+  /* position: relative;
+  display: block; */
 `;
 
 export const StyledInput = styled(Field)`
   display: block;
-  margin: 10px 0px 40px;
   padding: 3px 10px;
-  width: 250px;
-  height: 20px;
+  width: 280px;
+  height: 30px;
   border: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -25,14 +31,14 @@ export const StyledInput = styled(Field)`
 
 export const StyledErrorText = styled.p`
   position: absolute;
-  top: 65px;
+  top: 26px;
   font-size: 16px;
   color: red;
 `;
 
 export const StyledButton = styled.button`
   display: block;
-  margin: 0 30px 40px;
+  /* margin: 0 30px 40px; */
   background-color: white;
   border: 0px solid gray;
   border-radius: 5px;
@@ -42,7 +48,8 @@ export const StyledButton = styled.button`
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: azure;
   }
 

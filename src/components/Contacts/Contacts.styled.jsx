@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-export const StyledDeleteContactButton = styled.button`
-  margin: 0 30px 40px;
+export const StyledButton = styled.button`
+  /* margin: 0 30px 40px; */
   background-color: white;
   border: 0px;
   border-radius: 5px;
@@ -27,8 +27,11 @@ export const StyledContactsListUL = styled.ul`
 export const StyledContactListItemLi = styled.li`
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  gap: 5px;
   max-width: 500px;
   height: 40px;
-  color: #f7eaea;
+  margin-bottom: 5px;
+  color: #fff;
+  border-bottom: 1px solid white;
 `;
