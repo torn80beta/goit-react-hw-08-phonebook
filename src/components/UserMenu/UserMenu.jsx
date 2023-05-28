@@ -8,6 +8,7 @@ import {
   StyledUserWrapper,
 } from './UserMenu.styled';
 import PersonIcon from '@mui/icons-material/Person';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -19,11 +20,13 @@ export const UserMenu = () => {
         <PersonIcon sx={{ fontSize: 20 }} />
         <StyledUserName>{user.name}</StyledUserName>
       </StyledUserWrapper>
+
       <StyledUserMenuButton
         type="button"
         onClick={() => dispatch(userLogout())}
       >
         Logout
+        <LogoutIcon sx={{ fontSize: 20 }} />
       </StyledUserMenuButton>
     </StyledUserMenuWrapper>
   );

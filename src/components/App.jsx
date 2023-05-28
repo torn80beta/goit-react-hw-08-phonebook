@@ -45,7 +45,7 @@ const App = () => {
               <StyledCamera></StyledCamera>
               <StyledLine></StyledLine>
             </StyledTopWrapper>
-            {/* <MobileWrapper> */}
+
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<HomePage />} />
@@ -78,7 +78,6 @@ const App = () => {
                 />
               </Route>
             </Routes>
-            {/* </MobileWrapper> */}
           </StyledPhoneMirror>
         </StyledPhone>
       </StyledMobileWrapper>

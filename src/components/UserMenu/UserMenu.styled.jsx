@@ -25,6 +25,10 @@ export const StyledUserName = styled.p`
 `;
 
 export const StyledUserMenuButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   border: none;
   background-color: transparent;
   cursor: pointer;
