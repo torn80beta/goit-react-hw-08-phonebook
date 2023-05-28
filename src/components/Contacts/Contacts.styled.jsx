@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import Modal from 'react-modal';
+Modal.setAppElement('#modal-root');
 
 export const StyledButton = styled.button`
   background-color: #cddadd;
@@ -39,4 +41,14 @@ export const StyledContactListItemLi = styled.li`
 export const StyledButtonsWrapper = styled.div`
   display: flex;
   gap: 5px;
+`;
+
+export const StyledModal = styled(Modal)`
+  position: absolute;
+  top: 199px;
+  left: 343px;
+  width: 356px;
+  height: 540px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 `;

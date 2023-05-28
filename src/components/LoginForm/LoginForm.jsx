@@ -5,7 +5,7 @@ import {
   StyledForm,
   StyledLabel,
   StyledInput,
-  StyledButton,
+  StyledSubmitButton,
   StyledH2,
 } from 'components/SharedStyles/Form.styled';
 
@@ -34,7 +34,7 @@ export const LoginForm = () => {
         <StyledLabel>
           <StyledInput type="password" name="password" placeholder="Password" />
         </StyledLabel>
-        <StyledButton type="submit">Log In</StyledButton>
+        <StyledSubmitButton type="submit">Log In</StyledSubmitButton>
       </StyledBackground>
     </StyledForm>
   );

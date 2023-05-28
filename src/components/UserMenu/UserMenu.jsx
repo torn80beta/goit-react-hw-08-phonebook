@@ -9,6 +9,8 @@ import {
 } from './UserMenu.styled';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { StyledNavLink } from './UserMenu.styled';
+// import { NavLink } from 'react-router-dom';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -20,7 +22,7 @@ export const UserMenu = () => {
         <PersonIcon sx={{ fontSize: 20 }} />
         <StyledUserName>{user.name}</StyledUserName>
       </StyledUserWrapper>
-
+      <StyledNavLink to="/contacts">Contacts</StyledNavLink>
       <StyledUserMenuButton
         type="button"
         onClick={() => dispatch(userLogout())}

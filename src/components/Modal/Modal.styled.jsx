@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 
 export const StyledOverlayDiv = styled.div`
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 365px;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;

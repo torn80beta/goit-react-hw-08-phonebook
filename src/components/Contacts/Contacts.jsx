@@ -12,10 +12,18 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 /* Modal */
 import { useState } from 'react';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
-Modal.setAppElement('#modal-root');
+import { StyledModal } from './Contacts.styled';
+import { StyledBackground } from 'components/SharedStyles/Background.styled';
+import {
+  StyledForm,
+  StyledH2,
+  StyledInput,
+  StyledSubmitButton,
+} from 'components/SharedStyles/Form.styled';
+// Modal.setAppElement('#modal-root');
 /*  */
 
 const getFilteredContacts = (contacts, filter) => {
@@ -83,20 +91,32 @@ export const Contacts = ({ onDeleteContact }) => {
               <DeleteOutlineIcon sx={{ fontSize: 16 }} />
             </StyledButton>
           </StyledButtonsWrapper>
-          <Modal
+          <StyledModal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             contentLabel="Example Modal"
+            style={{
+              overlay: {
+                backgroundColor: 'transparent',
+              },
+              content: {
+                color: 'lightsteelblue',
+              },
+            }}
           >
-            <button onClick={closeModal}>close</button>
-            <div>Edit contact</div>
-            <form onSubmit={handleEditContact}>
-              <p>Contact ID {id}</p>
-              <input value={editName} onChange={handleNameChange} />
-              <input value={editNumber} onChange={handleNumberChange} />
-              <button type="submit">Submit</button>
-            </form>
-          </Modal>
+            <StyledBackground>
+              {/* <div> */}
+              <StyledForm onSubmit={handleEditContact}>
+                <StyledH2 style={{ color: '#2a363b' }}>Edit contact</StyledH2>
+                {/* <p>Contact ID {id}</p> */}
+                <StyledInput value={editName} onChange={handleNameChange} />
+                <StyledInput value={editNumber} onChange={handleNumberChange} />
+                <StyledSubmitButton type="submit">Submit</StyledSubmitButton>
+              </StyledForm>
+              <button onClick={closeModal}>close</button>
+              {/* </div> */}
+            </StyledBackground>
+          </StyledModal>
         </StyledContactListItemLi>
       ))}
     </StyledContactsListUL>

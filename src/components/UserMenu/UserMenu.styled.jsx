@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const StyledUserMenuWrapper = styled.div`
   display: flex;
@@ -42,5 +43,18 @@ export const StyledUserMenuButton = styled.button`
 
   &:active {
     background-color: #ff6c00;
+  }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  font-size: 17px;
+  font-weight: 700;
+  color: #2a363b;
+  &:hover,
+  &:focus {
+    color: #ef8e47;
+  }
+  &.active {
+    color: #ef8e47;
   }
 `;

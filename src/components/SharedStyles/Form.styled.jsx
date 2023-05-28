@@ -39,7 +39,7 @@ export const StyledInput = styled.input`
   }
 `;
 
-export const StyledButton = styled.button`
+export const StyledSubmitButton = styled.button`
   /* alignItems: 'center', */
   /* justifyContent: 'center', */
   min-width: 300px;
