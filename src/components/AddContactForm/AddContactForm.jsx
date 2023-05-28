@@ -6,6 +6,7 @@ import {
   StyledErrorText,
   StyledButton,
   StyledLabel,
+  StyledAddContactFormWrapper,
 } from './AddContactForm.styled';
 import * as yup from 'yup';
 import { getIsLoading } from 'redux/contacts/selectors';
@@ -22,7 +23,7 @@ const schema = yup.object().shape({
     .required('Name is a required field.')
     .min(2, 'Name must be at least 13 characters.')
     .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, {
-      message: 'Name must match the following: "a-z, A-Z, а-я, А-Я".',
+      message: 'Name must contain: "a-z, A-Z, а-я, А-Я".',
       excludeEmptyString: false,
     }),
   number: yup
@@ -33,8 +34,7 @@ const schema = yup.object().shape({
     .matches(
       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
       {
-        message:
-          'Number must contain only numbers from "0" to "9" and "+" or "-" symbols.',
+        message: 'Number must contain: "0-9" and "+" or "-" symbols.',
         excludeEmptyString: false,
       }
     ),
@@ -74,28 +74,30 @@ const AddContactForm = ({ addContact }) => {
       onSubmit={handleNameSubmit}
     >
       <Form>
-        <StyledLabel htmlFor="name">
-          Name:
-          <StyledInput
-            type="text"
-            name="name"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          />
-          <ErrorForm name="name" />
-        </StyledLabel>
+        <StyledAddContactFormWrapper>
+          <StyledLabel htmlFor="name">
+            <StyledInput
+              type="text"
+              name="name"
+              placeholder="Name"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            />
+            <ErrorForm name="name" />
+          </StyledLabel>
 
-        <StyledLabel htmlFor="number">
-          Number:
-          <StyledInput
-            type="tel"
-            name="number"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          />
-          <ErrorForm name="number" />
-        </StyledLabel>
-        <StyledButton type="submit" disabled={isFetching}>
-          {isFetching ? '......Loading' : 'Add contact'}
-        </StyledButton>
+          <StyledLabel htmlFor="number">
+            <StyledInput
+              type="tel"
+              name="number"
+              placeholder="Phone number"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            />
+            <ErrorForm name="number" />
+          </StyledLabel>
+          <StyledButton type="submit" disabled={isFetching}>
+            {isFetching ? '......Loading' : 'Add contact'}
+          </StyledButton>
+        </StyledAddContactFormWrapper>
       </Form>
     </Formik>
   );

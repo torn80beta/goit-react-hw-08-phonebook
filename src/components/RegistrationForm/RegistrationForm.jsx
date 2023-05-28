@@ -1,6 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/operations';
-import css from './RegistrationForm.module.css';
+import {
+  StyledForm,
+  StyledLabel,
+  StyledInput,
+  StyledH2,
+  StyledButton,
+} from '../SharedStyles/Form.styled';
+import { StyledBackground } from 'components/SharedStyles/Background.styled';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -15,24 +22,34 @@ export const RegistrationForm = () => {
         password: form.elements.password.value,
       })
     );
-    form.reset();
+    // form.reset();
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label className={css.label}>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+    <StyledForm onSubmit={handleSubmit} autoComplete="off">
+      <StyledBackground>
+        <StyledH2>Registration</StyledH2>
+        <StyledLabel>
+          <StyledInput
+            type="text"
+            name="name"
+            placeholder="Username"
+            autoComplete="on"
+          />
+        </StyledLabel>
+        <StyledLabel>
+          <StyledInput
+            type="email"
+            name="email"
+            placeholder="Email"
+            autoComplete="on"
+          />
+        </StyledLabel>
+        <StyledLabel>
+          <StyledInput type="password" name="password" placeholder="Password" />
+        </StyledLabel>
+        <StyledButton type="submit">Register</StyledButton>
+      </StyledBackground>
+    </StyledForm>
   );
 };

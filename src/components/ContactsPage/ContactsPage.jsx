@@ -11,6 +11,11 @@ import {
   addContact,
   deleteContact,
 } from 'redux/contacts/operations';
+import {
+  StyledContactsWrapper,
+  StyledFormWrapper,
+} from './ContactsPage.styled';
+import { StyledBackground } from 'components/SharedStyles/Background.styled';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -45,12 +50,15 @@ export default function ContactsPage() {
   };
 
   return (
-    <>
-      <Title title={'Contacts'} />
-      <AddContactForm addContact={handleAddContact} />
-      <Title title={'Contacts'} />
-      <Filter value={filter} onChange={handleFilterChange} />
-      <Contacts onDeleteContact={handleDeleteContact} />
-    </>
+    <StyledBackground>
+      <StyledFormWrapper>
+        <Title title={'Add Contact'} />
+        <AddContactForm addContact={handleAddContact} />
+        <Filter value={filter} onChange={handleFilterChange} />
+      </StyledFormWrapper>
+      <StyledContactsWrapper>
+        <Contacts onDeleteContact={handleDeleteContact} />
+      </StyledContactsWrapper>
+    </StyledBackground>
   );
 }

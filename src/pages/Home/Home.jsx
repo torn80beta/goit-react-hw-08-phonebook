@@ -1,21 +1,12 @@
-const styles = {
-  container: {
-    minHeight: 'calc(100vh - 50px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: 'center',
-  },
-};
+import { StyledHomeContainer, StyledHomeTitle } from './Home.styled';
+import { StyledBackground } from 'components/SharedStyles/Background.styled';
 
 export default function Home() {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Contacts book</h1>
-    </div>
+    <StyledHomeContainer>
+      <StyledBackground>
+        <StyledHomeTitle>Contacts book</StyledHomeTitle>
+      </StyledBackground>
+    </StyledHomeContainer>
   );
 }

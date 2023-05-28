@@ -6,8 +6,12 @@ const Filter = ({ onChange }) => {
   //   console.log(onChange);
   return (
     <StyledSectionFilter>
-      <p>Find contacts by name</p>
-      <StyledFilterInput type="text" name="filter" onChange={onChange} />
+      <StyledFilterInput
+        type="text"
+        name="filter"
+        onChange={onChange}
+        placeholder="Search"
+      />
     </StyledSectionFilter>
   );
 };
