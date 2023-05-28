@@ -7,10 +7,24 @@ import {
   StyledInput,
   StyledSubmitButton,
   StyledH2,
+  StyledError,
 } from 'components/SharedStyles/Form.styled';
+import { useAuth } from 'hooks';
+import { useEffect } from 'react';
+import { clearLoginError } from 'redux/auth/slice';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+  const { loginError } = useAuth();
+
+  useEffect(() => {
+    if (!loginError) {
+      return;
+    }
+    return () => {
+      dispatch(clearLoginError(false));
+    };
+  }, [loginError, dispatch]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -21,13 +35,16 @@ export const LoginForm = () => {
         password: form.elements.password.value,
       })
     );
-    form.reset();
+    // form.reset();
   };
 
   return (
     <StyledForm onSubmit={handleSubmit} autoComplete="on">
       <StyledBackground>
         <StyledH2>Log In</StyledH2>
+        {loginError ? (
+          <StyledError>Wrong username or password</StyledError>
+        ) : null}
         <StyledLabel>
           <StyledInput type="email" name="email" placeholder="Email" />
         </StyledLabel>

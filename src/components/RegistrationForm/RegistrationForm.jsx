@@ -6,11 +6,14 @@ import {
   StyledInput,
   StyledH2,
   StyledSubmitButton,
+  StyledError,
 } from '../SharedStyles/Form.styled';
 import { StyledBackground } from 'components/SharedStyles/Background.styled';
+import { useAuth } from 'hooks';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
+  const { regError } = useAuth();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,9 +29,11 @@ export const RegistrationForm = () => {
   };
 
   return (
+    // console.log(isError),
     <StyledForm onSubmit={handleSubmit} autoComplete="off">
       <StyledBackground>
         <StyledH2>Registration</StyledH2>
+        {regError ? <StyledError>Wrong username or email</StyledError> : null}
         <StyledLabel>
           <StyledInput
             type="text"

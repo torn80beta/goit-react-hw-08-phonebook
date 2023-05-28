@@ -61,3 +61,7 @@ export const StyledSubmitButton = styled.button`
     background-color: #ff6c00;
   }
 `;
+
+export const StyledError = styled.p`
+  color: #7c0c0c;
+`;
