@@ -13,5 +13,5 @@ export const StyledHomeTitle = styled.h1`
   font-weight: 500px;
   font-size: 45px;
   margin-bottom: 250px;
-  /* text-align: center; */
+  color: #fff;
 `;

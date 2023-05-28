@@ -6,7 +6,7 @@ export const StyledAddContactFormWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 `;
 
 export const StyledLabel = styled.label`
@@ -29,10 +29,17 @@ export const StyledInput = styled(Field)`
   }
 `;
 
-export const StyledErrorText = styled.p`
+export const StyledErrorName = styled.p`
   position: absolute;
-  top: 26px;
-  font-size: 16px;
+  top: 2px;
+  font-size: 15px;
+  color: red;
+`;
+
+export const StyledErrorNumber = styled.p`
+  position: absolute;
+  top: 58px;
+  font-size: 15px;
   color: red;
 `;
 

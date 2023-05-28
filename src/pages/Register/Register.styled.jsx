@@ -7,4 +7,5 @@ export const StyledRegisterSection = styled.section`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  color: #fff;
 `;

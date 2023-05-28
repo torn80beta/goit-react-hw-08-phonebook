@@ -1,4 +1,4 @@
-import { Title } from 'components/Title/Title';
+// import { Title } from 'components/Title/Title';
 import AddContactForm from 'components/AddContactForm/AddContactForm';
 import Filter from 'components/Filter/Filter';
 import { Contacts } from 'components/Contacts/Contacts';
@@ -52,7 +52,7 @@ export default function ContactsPage() {
   return (
     <StyledBackground>
       <StyledFormWrapper>
-        <Title title={'Add Contact'} />
+        {/* <Title title={'Add Contact'} /> */}
         <AddContactForm addContact={handleAddContact} />
         <Filter value={filter} onChange={handleFilterChange} />
       </StyledFormWrapper>

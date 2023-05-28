@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { Formik, Form, ErrorMessage } from 'formik';
 import {
   StyledInput,
-  StyledErrorText,
+  StyledErrorName,
+  StyledErrorNumber,
   StyledButton,
   StyledLabel,
   StyledAddContactFormWrapper,
@@ -41,10 +42,15 @@ const schema = yup.object().shape({
 });
 
 const ErrorForm = ({ name }) => {
-  return (
+  return name === 'name' ? (
     <ErrorMessage
       name={name}
-      render={message => <StyledErrorText>{message}</StyledErrorText>}
+      render={message => <StyledErrorName>{message}</StyledErrorName>}
+    />
+  ) : (
+    <ErrorMessage
+      name={name}
+      render={message => <StyledErrorNumber>{message}</StyledErrorNumber>}
     />
   );
 };

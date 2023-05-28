@@ -6,7 +6,7 @@ export const StyledFormWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 17px;
-  margin-top: 0px;
+  margin-top: 5px;
 `;
 
 export const StyledContactsWrapper = styled.div`
