@@ -40,7 +40,7 @@ export const StyledContactListItemLi = styled.li`
 
 export const StyledButtonsWrapper = styled.div`
   display: flex;
-  gap: 5px;
+  gap: 10px;
 `;
 
 export const StyledModal = styled(Modal)`
@@ -51,4 +51,24 @@ export const StyledModal = styled(Modal)`
   height: 540px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+`;
+
+export const StyledModalCloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 7px;
+  padding-top: 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    background-color: #ffdec5;
+  }
 `;

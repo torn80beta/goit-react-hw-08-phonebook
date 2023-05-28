@@ -5,6 +5,7 @@ import {
   StyledContactListItemLi,
   StyledContactsListUL,
   StyledButtonsWrapper,
+  StyledModalCloseButton,
 } from './Contacts.styled';
 import { useSelector } from 'react-redux';
 import { getContacts, getFilter, getIsLoading } from 'redux/contacts/selectors';
@@ -12,7 +13,6 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 /* Modal */
 import { useState } from 'react';
-// import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
 import { StyledModal } from './Contacts.styled';
@@ -23,7 +23,7 @@ import {
   StyledInput,
   StyledSubmitButton,
 } from 'components/SharedStyles/Form.styled';
-// Modal.setAppElement('#modal-root');
+import CloseIcon from '@mui/icons-material/Close';
 /*  */
 
 const getFilteredContacts = (contacts, filter) => {
@@ -105,7 +105,6 @@ export const Contacts = ({ onDeleteContact }) => {
             }}
           >
             <StyledBackground>
-              {/* <div> */}
               <StyledForm onSubmit={handleEditContact}>
                 <StyledH2 style={{ color: '#2a363b' }}>Edit contact</StyledH2>
                 {/* <p>Contact ID {id}</p> */}
@@ -113,8 +112,10 @@ export const Contacts = ({ onDeleteContact }) => {
                 <StyledInput value={editNumber} onChange={handleNumberChange} />
                 <StyledSubmitButton type="submit">Submit</StyledSubmitButton>
               </StyledForm>
-              <button onClick={closeModal}>close</button>
-              {/* </div> */}
+              <StyledModalCloseButton onClick={closeModal}>
+                <CloseIcon />
+                {/* close */}
+              </StyledModalCloseButton>
             </StyledBackground>
           </StyledModal>
         </StyledContactListItemLi>
