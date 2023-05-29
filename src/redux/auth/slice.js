@@ -17,6 +17,9 @@ const authSlice = createSlice({
     clearLoginError: (state, action) => {
       state.loginError = action.payload;
     },
+    clearRegistrationError: (state, action) => {
+      state.registrationError = action.payload;
+    },
   },
   extraReducers: {
     [registerUser.fulfilled](state, action) {
@@ -57,4 +60,4 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-export const { clearLoginError } = authSlice.actions;
+export const { clearLoginError, clearRegistrationError } = authSlice.actions;

@@ -10,10 +10,21 @@ import {
 } from '../SharedStyles/Form.styled';
 import { StyledBackground } from 'components/SharedStyles/Background.styled';
 import { useAuth } from 'hooks';
+import { useEffect } from 'react';
+import { clearRegistrationError } from 'redux/auth/slice';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
   const { regError } = useAuth();
+
+  useEffect(() => {
+    if (!regError) {
+      return;
+    }
+    return () => {
+      dispatch(clearRegistrationError(false));
+    };
+  }, [regError, dispatch]);
 
   const handleSubmit = e => {
     e.preventDefault();
