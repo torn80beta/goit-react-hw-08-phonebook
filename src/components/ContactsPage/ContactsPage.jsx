@@ -56,7 +56,7 @@ export default function ContactsPage() {
         <AddContactForm addContact={handleAddContact} />
         <Filter value={filter} onChange={handleFilterChange} />
       </StyledFormWrapper>
-      <StyledContactsWrapper>
+      <StyledContactsWrapper id="modalOut">
         <Contacts onDeleteContact={handleDeleteContact} />
       </StyledContactsWrapper>
     </StyledBackground>

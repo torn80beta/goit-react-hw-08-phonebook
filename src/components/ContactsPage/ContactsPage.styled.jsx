@@ -10,6 +10,7 @@ export const StyledFormWrapper = styled.div`
 `;
 
 export const StyledContactsWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-grow: 1;

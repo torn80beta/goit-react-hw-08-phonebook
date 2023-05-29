@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Modal from 'react-modal';
-Modal.setAppElement('#modal-root');
+Modal.setAppElement('#root');
 
 export const StyledButton = styled.button`
   background-color: #cddadd;
@@ -45,8 +45,8 @@ export const StyledButtonsWrapper = styled.div`
 
 export const StyledModal = styled(Modal)`
   position: absolute;
-  top: 199px;
-  left: 343px;
+  top: 102px;
+  left: 2px;
   width: 356px;
   height: 540px;
   border-bottom-left-radius: 30px;

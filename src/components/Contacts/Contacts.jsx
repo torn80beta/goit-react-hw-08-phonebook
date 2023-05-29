@@ -94,7 +94,8 @@ export const Contacts = ({ onDeleteContact }) => {
           <StyledModal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
-            contentLabel="Example Modal"
+            parentSelector={() => document.querySelector('#modalOut')}
+            contentLabel="Modal"
             style={{
               overlay: {
                 backgroundColor: 'transparent',
@@ -114,7 +115,6 @@ export const Contacts = ({ onDeleteContact }) => {
               </StyledForm>
               <StyledModalCloseButton onClick={closeModal}>
                 <CloseIcon />
-                {/* close */}
               </StyledModalCloseButton>
             </StyledBackground>
           </StyledModal>

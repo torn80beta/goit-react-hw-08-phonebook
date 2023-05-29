@@ -8,17 +8,11 @@ export const StyledAppWrapper = styled.section`
   transform: translate(-50%, -50%);
   max-width: 360px;
   max-height: 740px;
-  /* margin: 0 auto; */
-  /* border: 1px solid black;
-  border-radius: 20px; */
-  /* overflow: hidden; */
-  /* background-color: green; */
 `;
 
 /* Mobile */
 
 export const StyledMobileWrapper = styled.div`
-  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +25,6 @@ export const StyledPhone = styled.div`
   width: 360px;
   height: 740px;
   background: #232526;
-  /* background: #1a1a58; */
   border-radius: 40px;
   padding: 10px 15px;
 `;
@@ -40,7 +33,6 @@ export const StyledPhoneMirror = styled.div`
   /* position: relative; */
   width: 356px;
   height: 700px;
-  /* background-color: rgb(26, 25, 25); */
   background-color: white;
   border-radius: 30px;
 `;

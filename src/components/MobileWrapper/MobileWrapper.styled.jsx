@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const StyledMobileWrapper = styled.div`
-  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,10 +18,8 @@ export const StyledPhone = styled.div`
 `;
 
 export const StyledPhoneMirror = styled.div`
-  /* position: relative; */
   width: 356px;
   height: 720px;
-  /* background-color: rgb(26, 25, 25); */
   background-color: white;
   border-radius: 30px;
 `;
